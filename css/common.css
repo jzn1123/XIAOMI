@@ -1,0 +1,20 @@
+.container{
+    width: 1226px;
+    height: 40px;
+    margin: 0 auto;
+}
+#top-bar{
+    background-color: #333333;
+}
+.top-list{
+    height: 40px;
+    background-color: #333333;
+}
+.res{
+    padding: 6px;
+}
+.top-list a{
+    font-size: 12px;
+    color: #b0b0b0;
+    line-height: 40px;
+}
