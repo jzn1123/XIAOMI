@@ -1,0 +1,12 @@
+#top{
+    width: 1349px;
+    height: 98px;
+    background-color: #fff;
+}
+.logo-bg{
+    margin-left: 101px;
+    padding-top: 25px;
+}
+.logo a{
+    display: block;
+}
