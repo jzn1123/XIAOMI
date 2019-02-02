@@ -1,12 +1,52 @@
 #top{
     width: 1349px;
     height: 98px;
+    margin: 0 auto;
     background-color: #fff;
 }
-.logo-bg{
-    margin-left: 101px;
-    padding-top: 25px;
+.logo{
+    margin-left: 110px;
 }
 .logo a{
+    width: 200px;
+    height: 98px;
+    background: url("../loginImages/logo.jpg");
     display: block;
+    text-indent: -9999px;
+}
+.main{
+    background: #e2e2e2;
+    position: relative;
+}
+.banner{
+    height: 535px;
+    width: 1349px;
+    background: url("../loginImages/img1_06.jpg") no-repeat;
+    display: block;
+}
+.banner img{
+    height: 535px;
+}
+.login{
+    width: 410px;
+    height: 502px;
+    background-color: #fff;
+    position: absolute;
+    top: 32px;
+    left: 830px;
+}
+.login-nav{
+    margin-left: 67px;
+}
+.login-nav a{
+    font-size: 24px;
+    line-height: 88px;
+    color: #666666;  ]
+}
+.line{
+    width: 2px;
+    height: 29px;
+    background: #e0e0e0;
+    display: inline-block;
+    margin: 0 42px 0 42px;
 }
