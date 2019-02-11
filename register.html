@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米商城</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <!-- <h1>   hello word</h1> -->
+    <!-- <div>你好世界</div> -->
+    <div class="wrapper">
+        <div class="container">
+            <h1>
+                <img src="images/logo.png.png" alt="小米logo">
+            </h1>
+
+            <h2>注册小米帐号</h2>
+            <div class="register-content">
+                <div class="select_country">
+                    <h3>国家/地区</h3>
+                    <div class="country">中国</div>
+                    <p>成功注册帐号后，国家/地区将不能被修改</p>
+                </div>
+                <div class="tel">
+                    <h3>手机号码</h3>
+                    <input type="tel" class="tel_input" placeholder="+86 请输入手机号码" />
+                    <span>手机号码格式错误</span>
+                    <p class="agreeAlert">请您同意用户条款</p>
+                </div>
+                <form action="http://baidu.com" onclick="return submitTest()">
+                    <input type="submit" value="立即注册" class="submit">
+                </form>
+            </div>
+
+            <div class="privacy-box">
+
+                <div class="jjj">
+                    <div class="readme">
+                        <i class="checkbox"><img src="images/select-true.png" alt="" class="select-true"></i>
+                        注册帐号即表示您同意并愿意遵守小米 <a href="https://static.account.xiaomi.com/html/agreement/account/cn.html">用户协议</a>和
+                        <a href="https://www.mi.com/about/privacy/">隐私政策</a>
+                    </div>
+                </div>
+
+                <script>
+                    // var flag = true;
+                    $form = document.querySelector("form");
+                    $readme = document.querySelector('.readme');
+                    $select = document.querySelector(".checkbox");
+                    $telephone = document.querySelector(".tel_input");
+                    $span = document.querySelector("span");
+                    $agreeAlert = document.querySelector(".agreeAlert");
+
+
+                    // 手机号码格式判断
+                    $telephone.addEventListener("blur", function () {
+                        if (!(/^1(3|4|5|7|8)\d{9}$/.test($telephone.value))) {
+                            $span.style.display = "block";
+                            // alert("手机号码有误，请重填");
+                            return false;
+                        } else {
+                            $span.style.display = "none";
+                        }
+                    }, false);
+                    $telephone.addEventListener("input", function () {
+                        $span.style.display = "none";
+                    }, false);
+
+
+
+                    // if ($select.firstChild.src.indexOf(true) > 0) {
+                    //     $form.onsubmit = "return true";
+                    //         $form.onclick = "return true";
+                    // //     // flag = true;
+                    // //     console.log(11111);
+
+                    // // } else {
+                    // //    console.log(7777);
+                    // //    flag = false;
+                    // //    $form.onsubmit = "return false";
+                    // }
+
+                    $readme.onclick = function (e) {
+                        target = e.target;
+                        if (target.nodeName != ("A")) {
+                            if ($select.firstChild.src.indexOf("false") > -1) {
+                                console.log("选中");
+                                $select.firstChild.src = "images/select-true.png";
+
+                                $agreeAlert.style.display = "none";
+                                // flag = true;
+                                // console.log(flag)
+                                // $form.onsubmit = "return true";
+
+                            } else {
+                                console.log("未选中");
+                                $select.firstChild.src = "images/select-false.png";
+                                $form.onsubmit = "return false";
+                                $form.omclick = "return false";
+
+                                console.log($form);
+                                //     flag = false;
+                                //     console.log(flag)
+                            }
+                        }
+
+
+
+
+                    }
+
+                    function submitTest() {
+                        if ($select.firstChild.src.indexOf(false) > -1 && $telephone.value.length < 11) {
+
+                            $agreeAlert.style.display = "block";
+                            $span.style.display = "block";
+                            return false;
+
+
+
+                            // 手机错误 ，未同意隐私条款，如何实现同时出现两个提示；
+                        } else if ($select.firstChild.src.indexOf(false) > -1) {
+
+                            $agreeAlert.style.display = "block";
+                            return false;
+
+
+
+                            // 手机错误 ，未同意隐私条款，如何实现同时出现两个提示；
+                        } else if ($telephone.value.length < 11) {
+                            $telephone.focus();
+                            $span.style.display = "block";
+                            return false;
+
+                        } else {
+                            return true;
+                        }
+                    }
+                    //     if (flag) {
+                    //         console.log("woyaotiaozhuanle ")
+                    //         $form.onsubmit = "return true";
+                    //     } else (
+                    //         $form.onsubmit = "return false"
+
+                    //     )
+
+
+                    //存在的Bug   前面的勾选正常， 勾选几次后，即使手机不正确，未勾选也能跳转    //已解决
+                </script>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="" class="active">简体</a>|
+            <a href=""> 繁体</a>|
+            <a href="">English </a>|
+            <a href=""> 常见问题</a>
+
+            <p>米公司版权所有-京ICP备10046444-
+                <i><img src="images/ghs.png" alt=""></i>
+                京公网安备11010802020134号-京ICP证110507号</p>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
